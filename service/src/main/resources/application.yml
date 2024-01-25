@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/d_blog?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+    username: dblog
+    password: dblog
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 12345678
+jimmer:
+  language: kotlin
+  dialect: org.babyfish.jimmer.sql.dialect.MySqlDialect
+  offset-optimizing-threshold: 10
+  id-only-target-checking-level: ALL
+  show-sql: true
+  pretty-sql: true
+  executor-context-prefixes:
+    - org.babyfish.jimmer.sql.example.business
+  client:
+    ts:
+      path: /ts.zip
+    # 启动jimmer自定义的openapi
+    openapi:
+      # yml文档地址
+      path: /openapi.yml
+      ui-path: /api.html
+      properties:
+        info:
+          title: Jimmer REST Example(Kotlin)
+          description: This is the OpenAPI UI of Jimmer REST Example(Kolint)
+          version: 0.8.64
+        securities:
+          - tenantHeader: [a]
+        components:
+          securitySchemes:
+            tenantHeader:
+              type: apiKey
+              name: tenant
+              in: HEADER
+server:
+  port: 8083

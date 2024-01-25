@@ -1,0 +1,24 @@
+export top.seems.blog.kt.model.SysUser
+    -> package top.seems.blog.kt.dto
+
+import org.springframework.format.annotation.DateTimeFormat
+
+specification SysUserSpecification {
+    #allScalars
+
+    ge(createTime)
+
+    le(updateTime)
+}
+input LoginUserInput{
+    #allScalars?
+}
+input SysUserInput {
+    #allScalars
+}
+input SaveSysUserInput {
+    #allScalars(SysUser)?
+}
+input UpdateSysUserInput {
+    #allScalars(SysUser,IdFieldLong)?
+}

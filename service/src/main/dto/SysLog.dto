@@ -1,0 +1,21 @@
+export top.seems.blog.kt.model.SysLog
+    -> package top.seems.blog.kt.dto
+
+import org.springframework.format.annotation.DateTimeFormat
+
+specification SysLogSpecification {
+    #allScalars
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    ge(createTime)
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    le(updateTime)
+}
+
+input SaveSysLogInput {
+    #allScalars(SysLog)?
+}
+input UpdateSysLogInput {
+    #allScalars(SysLog,IdFieldLong)?
+}
