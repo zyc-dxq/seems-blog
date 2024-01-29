@@ -27,9 +27,9 @@ jimmer:
       ui-path: /api.html
       properties:
         info:
-          title: Jimmer REST Example(Kotlin)
-          description: This is the OpenAPI UI of Jimmer REST Example(Kolint)
-          version: 0.8.64
+          title: D-BLOG REST API(Kotlin)
+          description: This is the OpenAPI UI of D-BLOG REST API(Kotlin)
+          version: 0.0.1
         securities:
           - tenantHeader: [a]
         components:

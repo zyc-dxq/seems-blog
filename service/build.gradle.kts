@@ -34,6 +34,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
     runtimeOnly("com.h2database:h2:${h2Version}")
+    runtimeOnly("org.babyfish.jimmer:jimmer-client-swagger:${jimmerVersion}")
     runtimeOnly("mysql:mysql-connector-java:${mysqlConnectorJavaVersion}")
     runtimeOnly("org.postgresql:postgresql:${postgresqlVersion}")
     runtimeOnly("io.lettuce:lettuce-core:${lettuceCoreVersion}")

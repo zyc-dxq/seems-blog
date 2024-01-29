@@ -2,6 +2,7 @@ package top.seems.blog.kt.runtime.filter
 
 import org.slf4j.MDC
 import org.springframework.stereotype.Component
+import top.seems.blog.kt.runtime.untils.MessageDigestUtil
 import javax.servlet.Filter
 import javax.servlet.FilterChain
 import javax.servlet.ServletRequest
@@ -20,7 +21,7 @@ class MdcFilter() : Filter {
         val httpResponse: HttpServletResponse = response as HttpServletResponse
         var requestId: String? = httpRequest.getHeader(requestIdTemplate)
         if (requestId == null) {
-            requestId = httpRequest.requestedSessionId
+            requestId = MessageDigestUtil.signByHttpHeader(httpRequest)
         }
         val ip: String? = getRequestId(httpRequest)
         val path: String? = httpRequest.requestURI
