@@ -3,7 +3,7 @@ package top.seems.blog.kt.common
 import org.springframework.http.HttpStatus
 import java.io.Serializable
 
-data class Result<T>(val code: Int, var message: String?, var data: T?) : Serializable {
+data class Result<T>(val code: Int, var message: String?, var result: T?) : Serializable {
     val timestamp: Long = System.currentTimeMillis()
 
     var success: Boolean = true

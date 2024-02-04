@@ -1,4 +1,4 @@
-val jimmerVersion by extra { "0.8.86" }
+val jimmerVersion by extra { "0.8.87" }
 val jimmerKspVersion by extra { jimmerVersion }
 val hutoolVersion by extra { "5.8.24" }
 val lombokVersion by extra { "1.18.26" }

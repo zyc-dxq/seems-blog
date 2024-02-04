@@ -22,12 +22,15 @@ fun main(args: Array<String>) {
     if (!path.endsWith("/")) path = "$path/"
     var uiPath = env.getProperty("jimmer.client.openapi.ui-path", "")
     if (uiPath.startsWith("/")) uiPath = uiPath.substring(1)
+    var tsPath = env.getProperty("jimmer.client.ts.path", "")
+    if (tsPath.startsWith("/")) tsPath = tsPath.substring(1)
     LoggerFactory.getLogger("traceLog").also {
         it.info("----------------------------------------------------------")
         it.info("\tApplication $applicationName is running!")
         it.info("\tLocal: http://localhost:$port$path")
         it.info("\tExternal: http://$ip:$port$path")
         it.info("\tdoc: http://$ip:$port$path$uiPath")
+        it.info("\tts: http://$ip:$port$path$tsPath")
         it.info("----------------------------------------------------------")
     }
 }

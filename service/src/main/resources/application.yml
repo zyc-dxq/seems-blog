@@ -28,8 +28,8 @@ jimmer:
       properties:
         info:
           title: D-BLOG REST API(Kotlin)
-          description: This is the OpenAPI UI of D-BLOG REST API(Kotlin)
-          version: 0.0.1
+          description: This is the OpenAPI UI of D-BLOG REST API(Kotlin).Jimmer Version is ${jimmerVersion}
+          version: ${version}
         securities:
           - tenantHeader: [a]
         components:
@@ -39,4 +39,4 @@ jimmer:
               name: tenant
               in: HEADER
 server:
-  port: 8083
+  port: 8080
